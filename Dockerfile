@@ -2,12 +2,16 @@ FROM ubuntu:18.04
 
 MAINTAINER Lyan Nam <i@lazysoul.com>
 
+ENV DEBIAN_FRONTEND noninteractive 
+
 RUN apt-get clean && apt-get update && apt-get install -y locales
 
 # Set locales
-RUN locale-gen en_GB.UTF-8
-ENV LANG en_GB.UTF-8
-ENV LC_CTYPE en_GB.UTF-8
+RUN locale-gen en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_CTYPE en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
 # Set Timezone
 ENV TZ=Asia/Seoul
